@@ -20,9 +20,12 @@ function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
-        <Route path='/signup' element={<Signup  />} />
-        <Route path='/login' element={<Login isUserAuthenticated={isUserAuthenticated}/>} />
-        <Route path='/' element={<Layout isAuthenticated={isAuthenticated} />}>
+        <Route path="/signup" element={<Signup />} />
+        <Route
+          path="/login"
+          element={<Login isUserAuthenticated={isUserAuthenticated} />}
+        />
+        <Route path="/" element={<Layout isAuthenticated={isAuthenticated} />}>
           <Route path="" element={<Home />} />
         </Route>
       </>
