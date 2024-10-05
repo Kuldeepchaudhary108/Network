@@ -50,7 +50,7 @@ export default function ThemBtt() {
       </button>
 
       {isOpen && (
-        <div className="absolute z-10 bg-gray-800 text-white rounded-lg mt-2 w-48 shadow-lg">
+        <div className="absolute z-10 bg-gray-800 text-white rounded-lg mt-2  px-4 py-2 shadow-lg">
           <ul className="space-y-1">
             <li
               className={`flex items-center space-x-3 p-2 rounded-md cursor-pointer hover:bg-gray-700 transition-colors 
@@ -58,7 +58,6 @@ export default function ThemBtt() {
               onClick={() => handleThemeChange("light")}
             >
               <FaSun className="text-yellow-400" />
-              <span className="text-white">Light</span>
             </li>
             <li
               className={`flex items-center space-x-3 p-2 rounded-md cursor-pointer hover:bg-gray-700 transition-colors 
@@ -66,7 +65,6 @@ export default function ThemBtt() {
               onClick={() => handleThemeChange("dark")}
             >
               <FaMoon className="text-gray-400" />
-              <span className="text-white">Dark</span>
             </li>
           </ul>
         </div>

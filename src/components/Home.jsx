@@ -33,8 +33,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="ml-10 mt-28">
-          <h1 className="text-[#36382E] dark:text-gray-400 text-xl font-semibold flex">
+        <div className="ml-32 mt-28">
+          <h1 className="text-[#36382E] dark:text-gray-200 text-2xl font-semibold flex">
             EVENT{" "}
             <img
               className="w-8 ml-2"
@@ -45,8 +45,8 @@ export default function Home() {
         </div>
 
         <div>
-          <div className="flex justify-between items-center px-4 mx-auto max-w-[1200px] gap-6">
-            <div className="h-[550px] w-1/3 bg-white dark:bg-gray-800 text-center rounded-lg p-4">
+          <div className="flex justify-between items-center px-4 mt-3 mx-auto max-w-[1200px] gap-6">
+            <div className="h-[600px] w-1/3 bg-white dark:bg-gray-800 text-center rounded-lg p-4">
               <img
                 className="w-[392px] h-[392px] min-h-80 rounded-xl mx-auto"
                 src="./public/elements/Thumbnail 1.png"
@@ -68,7 +68,7 @@ export default function Home() {
               </button>
             </div>
 
-            <div className="h-[550px] w-1/3 bg-white dark:bg-gray-800 text-center rounded-lg p-4">
+            <div className="h-[600px] w-1/3 bg-white dark:bg-gray-800 text-center rounded-lg p-4">
               <img
                 className="w-[392px] h-[392px] min-h-80 rounded-xl mx-auto"
                 src="./public/elements/Thumbnail 1.png"
@@ -90,7 +90,7 @@ export default function Home() {
               </button>
             </div>
 
-            <div className="h-[550px] w-1/3 bg-white dark:bg-gray-800 text-center rounded-lg p-4">
+            <div className="h-[600px] w-1/3 bg-white dark:bg-gray-800 text-center rounded-lg p-4">
               <img
                 className="w-[392px] h-[392px] min-h-80 rounded-xl mx-auto"
                 src="./public/elements/Thumbnail 1.png"
