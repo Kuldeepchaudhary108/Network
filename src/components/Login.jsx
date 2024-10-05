@@ -40,8 +40,8 @@ export default function Login() {
           Login
         </button>
         <div className="text-[#36382E] font-bold text-xl mt-20">
-          New to {"<Hack.Ji />"}{" "}
-          <span className="text-[#720026]">? Signup!</span>{" "}
+          New to {"<Hack.Ji /> ?"}{" "}
+          <span className="text-[#720026]"> <a href="/signup">Signup!</a></span>{" "}
         </div>
       </div>
     </div>

@@ -1,7 +1,15 @@
-import React from "react";
-import Input from "./Input";
+import React, { useState } from "react";
 
 export default function Signup() {
+
+  const signupInitialValues = {
+    name:"",
+    username:"",
+    password:""
+  }
+
+  const [signup,setSignup]=useState(signupInitialValues)
+
   return (
     <div className="bg-gray-300 min-h-screen flex">
       <div className="bg-[#F06449] w-1/3 min-h-screen rounded-r-2xl flex items-center justify-center">
@@ -17,7 +25,7 @@ export default function Signup() {
       <div className="flex-1 flex flex-col items-center justify-center p-10">
         {/* Welcome Text */}
         <div className="text-[#36382E] font-semibold text-5xl -ml-56 ">
-          {"{ WELCOME }"}
+          {"{ WELCOME TO }"}
         </div>
         <div className="text-[#F06449] font-bold text-5xl -mr-36 mt-10">
           {"<Hack.js/>"}
@@ -45,8 +53,8 @@ export default function Signup() {
           Signup
         </button>
         <div className="text-[#36382E] font-bold text-xl mt-20">
-          Already have an account{" "}
-          <span className="text-[#720026]">? Login!</span>{" "}
+          Already have an account?{" "}
+          <span className="text-[#720026]"> <a href="/login">Login!</a></span>{" "}
         </div>
       </div>
     </div>
