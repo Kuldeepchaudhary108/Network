@@ -85,7 +85,7 @@ export default function Event() {
                   {card.members}
                 </p>
               </div>
-              <button className="bg-[#F06449] dark:bg-[#F06449] w-28 rounded-md mt-5 h-10 text-white">
+              <button className="bg-[#F06449] dark:bg-[#F06449] w-28 rounded-md mt-5 h-10 text-white hover:bg-[#d85640] transition-all duration-200">
                 +Join
               </button>
             </div>

@@ -58,7 +58,7 @@ export default function Header() {
           Blog
         </NavLink>
       </div>
-      <div className="flex space-x-4 -mr-72 font-semibold">
+      <div className="flex space-x-2 -mr-72 font-semibold">
         <button className="hover:bg-gray-200 transition-all duration-200 rounded-xl min-w-20 h-10 ">
           Login
         </button>

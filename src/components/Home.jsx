@@ -1,8 +1,35 @@
 import React from "react";
 import Header from "./Header";
 import ThemBtt from "./ThemBtt";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+  const cardData = [
+    {
+      id: 1,
+      title: "GDG Cloud Kochi",
+      profileImage: "./public/elements/profile.png",
+      members: 2290,
+    },
+    {
+      id: 2,
+      title: "GDG Cloud Kochi",
+      profileImage: "./public/elements/profile.png",
+      members: 2290,
+    },
+    {
+      id: 3,
+      title: "GDG Cloud Kochi",
+      profileImage: "./public/elements/profile.png",
+      members: 2290,
+    },
+  ];
+  const navigate = useNavigate();
+  const handleJoinClick = () => {
+    console.log("ya tak toh pauch raha hain ");
+    navigate("/event");
+  };
+
   return (
     <>
       <div className="bg-gray-300 dark:bg-gray-900 min-h-screen">
@@ -40,72 +67,37 @@ export default function Home() {
         </div>
 
         <div>
-          <div className="flex justify-between items-center px-4 mt-3 mx-auto max-w-[1200px] gap-6">
-            <div className="h-[600px] w-1/3 bg-white dark:bg-gray-800 text-center rounded-lg p-4">
-              <img
-                className="w-[392px] h-[392px] min-h-80 rounded-xl mx-auto"
-                src="./public/elements/Thumbnail 1.png"
-                alt="GDG Cloud Kochi"
-              />
-              <h1 className="mt-10 text-xl font-semibold text-gray-900 dark:text-gray-100">
-                GDG Cloud Kochi
-              </h1>
-              <div className="flex justify-center items-center space-x-2 mt-3">
-                <img
-                  className="h-5"
-                  src="./public/elements/profile.png"
-                  alt="Profile"
-                />
-                <p className="text-gray-700 dark:text-gray-300">2290</p>
+          <div className="flex  flex-wrap justify-between items-center   mx-auto max-w-[1200px] gap-1   ">
+            {cardData.map((card) => (
+              <div className=" w-[30%] mb-28 mt-24" key={card.id}>
+                <div className="h-[600px]   bg-white dark:bg-gray-800 text-center rounded-lg ">
+                  <img
+                    className="w-[392px] h-[392px] min-h-80 rounded-xl mx-auto"
+                    src="./public/elements/Thumbnail 1.png"
+                    alt={card.title}
+                  />
+                  <h1 className="mt-10 text-xl font-semibold text-gray-900 dark:text-gray-100">
+                    {card.title}
+                  </h1>
+                  <div className="flex justify-center items-center space-x-2 mt-3">
+                    <img
+                      className="h-5"
+                      src={card.profileImage}
+                      alt="Profile"
+                    />
+                    <p className="text-gray-700 dark:text-gray-300">
+                      {card.members}
+                    </p>
+                  </div>
+                  <button
+                    onClick={handleJoinClick}
+                    className="bg-[#F06449] dark:bg-[#F06449] w-28 rounded-md mt-5 h-10 text-white hover:bg-[#d85640] transition-all duration-200"
+                  >
+                    +Join
+                  </button>
+                </div>
               </div>
-              <button className="bg-[#F06449] dark:bg-[#F06449] w-28 h-10 rounded-md mt-5 text-white">
-                +Join
-              </button>
-            </div>
-
-            <div className="h-[600px] w-1/3 bg-white dark:bg-gray-800 text-center rounded-lg p-4">
-              <img
-                className="w-[392px] h-[392px] min-h-80 rounded-xl mx-auto"
-                src="./public/elements/Thumbnail 1.png"
-                alt="GDG Cloud Kochi"
-              />
-              <h1 className="mt-10 text-xl font-semibold text-gray-900 dark:text-gray-100">
-                GDG Cloud Kochi
-              </h1>
-              <div className="flex justify-center items-center space-x-2 mt-3">
-                <img
-                  className="h-5"
-                  src="./public/elements/profile.png"
-                  alt="Profile"
-                />
-                <p className="text-gray-700 dark:text-gray-300">2290</p>
-              </div>
-              <button className="bg-[#F06449] dark:bg-[#F06449] w-28 rounded-md mt-5 h-10 text-white">
-                +Join
-              </button>
-            </div>
-
-            <div className="h-[600px] w-1/3 bg-white dark:bg-gray-800 text-center rounded-lg p-4">
-              <img
-                className="w-[392px] h-[392px] min-h-80 rounded-xl mx-auto"
-                src="./public/elements/Thumbnail 1.png"
-                alt="GDG Cloud Kochi"
-              />
-              <h1 className="mt-10 text-xl font-semibold text-gray-900 dark:text-gray-100">
-                GDG Cloud Kochi
-              </h1>
-              <div className="flex justify-center items-center space-x-2 mt-3">
-                <img
-                  className="h-5"
-                  src="./public/elements/profile.png"
-                  alt="Profile"
-                />
-                <p className="text-gray-700 dark:text-gray-300">2290</p>
-              </div>
-              <button className="bg-[#F06449] dark:bg-[#F06449] w-28 rounded-md mt-5 h-10 text-white">
-                +Join
-              </button>
-            </div>
+            ))}
           </div>
         </div>
       </div>
