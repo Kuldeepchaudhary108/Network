@@ -34,12 +34,12 @@ export default function Home() {
         </div>
 
         <div className="ml-32 mt-28">
-          <h1 className="text-[#36382E] dark:text-gray-200 text-2xl font-semibold flex">
+          <h1 className="text-[#36382E] dark:text-gray-200 text-4xl font-semibold flex mb-12">
             EVENT{" "}
             <img
-              className="w-8 ml-2"
+              className="ml-2"
               src="./public/elements/right-long-solid.svg"
-              alt="right arrow"
+              alt="right arrow" width={15}
             />
           </h1>
         </div>

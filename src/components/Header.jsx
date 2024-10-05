@@ -3,7 +3,7 @@ import React from "react";
 export default function Header() {
   return (
     <div className="bg-white flex justify-between mt-2 h-12 items-center">
-      <div className="text-[#F06449] font-bold text-xl ml-2  ">
+      <div className="text-[#F06449] font-bold text-xl ml-8 mb-1  ">
         {"<Hack"} <span className="text-[#720026]">{".ji/>"}</span>
       </div>
       <div className="flex space-x-20 font-semibold">
