@@ -26,7 +26,6 @@ export default function Home() {
   ];
   const navigate = useNavigate();
   const handleJoinClick = () => {
-    console.log("ya tak toh pauch raha hain ");
     navigate("/event");
   };
 

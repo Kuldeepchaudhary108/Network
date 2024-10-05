@@ -1,7 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Event() {
-  // Explicit card data for 10 cards
+  const navigate = useNavigate();
+  const handleJoinClick = () => {
+    navigate("/room");
+  };
   const cardData = [
     {
       id: 1,
@@ -70,7 +74,7 @@ export default function Event() {
       <div className="flex  flex-wrap justify-between items-center   mx-auto max-w-[1200px] gap-1   ">
         {cardData.map((card) => (
           <div className=" w-[30%] mb-28 mt-24" key={card.id}>
-            <div className="h-[600px]   bg-white dark:bg-gray-800 text-center rounded-lg ">
+            <div className="h-[600px]   bg-white dark:bg-gray-800 text-center rounded-xl ">
               <img
                 className="w-[392px] h-[392px] min-h-80 rounded-xl mx-auto"
                 src="./public/elements/Thumbnail 1.png"
@@ -85,7 +89,10 @@ export default function Event() {
                   {card.members}
                 </p>
               </div>
-              <button className="bg-[#F06449] dark:bg-[#F06449] w-28 rounded-md mt-5 h-10 text-white hover:bg-[#d85640] transition-all duration-200">
+              <button
+                onClick={handleJoinClick}
+                className="bg-[#F06449] dark:bg-[#F06449] w-28 rounded-md mt-5 h-10 text-white hover:bg-[#d85640] transition-all duration-200"
+              >
                 +Join
               </button>
             </div>
