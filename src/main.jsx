@@ -13,6 +13,7 @@ import Layout from "./Layout.jsx";
 import Home from "./components/Home.jsx";
 import store from "./App/store.js";
 import Login from "./components/Login.jsx";
+import Event from "./components/Event.jsx";
 
 function App() {
   const [isAuthenticated, isUserAuthenticated] = useState(false);
@@ -27,6 +28,7 @@ function App() {
         />
         <Route path="/" element={<Layout isAuthenticated={isAuthenticated} />}>
           <Route path="" element={<Home />} />
+          <Route path="/event" element={<Event />} />
         </Route>
       </>
     )

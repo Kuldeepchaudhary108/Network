@@ -6,12 +6,6 @@ export default function Home() {
   return (
     <>
       <div className="bg-gray-300 dark:bg-gray-900 min-h-screen">
-        <div>
-          <Header />
-        </div>
-        <div className=" flex float-end">
-          <ThemBtt />
-        </div>
         <div className="flex mt-7">
           <div className="ml-16">
             <img src="./public/elements/image 1.png" alt="" />
@@ -39,7 +33,8 @@ export default function Home() {
             <img
               className="ml-2"
               src="./public/elements/right-long-solid.svg"
-              alt="right arrow" width={15}
+              alt="right arrow"
+              width={15}
             />
           </h1>
         </div>

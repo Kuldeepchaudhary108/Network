@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import ThemeBtn from "./components/ThemBtt";
 import { ThemeProvider } from "./components/Them";
+import Header from "./components/Header";
 function Layout() {
   const [themeMode, setThemeMode] = useState("light");
 
@@ -19,7 +20,8 @@ function Layout() {
   }, [themeMode]);
   return (
     <ThemeProvider value={{ themeMode, darkTheme, lightTheme }}>
-      <div className="">{<Outlet />}</div>
+      <Header />
+      <Outlet />
     </ThemeProvider>
   );
 }
