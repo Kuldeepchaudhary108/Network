@@ -1,14 +1,29 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { API } from "../service/api";
 
 export default function Signup() {
+  const navigate=useNavigate();
 
   const signupInitialValues = {
-    name:"",
-    username:"",
+    FullName:"",
+    email:"",
     password:""
   }
 
   const [signup,setSignup]=useState(signupInitialValues)
+
+  const onValueChange=(e)=>{
+    setSignup({...signup,[e.target.name]:e.target.value})
+  }
+
+  const userSignup=async()=>{
+    let res=await API.userSignup(signup);
+    if(res.isSuccess){
+      setSignup(signupInitialValues);
+      navigate("/login")
+    }
+  }
 
   return (
     <div className="bg-gray-300 min-h-screen flex">
@@ -36,20 +51,26 @@ export default function Signup() {
             className="h-12 w-full px-4 rounded-md border border-gray-400 focus:outline-none focus:border-[#F06449]"
             type="text"
             placeholder="Name"
+            name="FullName"
+            onChange={(e)=>onValueChange(e)}
           />
           <input
             className="h-12 w-full px-4 rounded-md border border-gray-400 focus:outline-none focus:border-[#F06449]"
             type="text"
             placeholder="Username"
+            name="email"
+            onChange={(e)=>onValueChange(e)}
           />
           <input
             className="h-12 w-full px-4 rounded-md border border-gray-400 focus:outline-none focus:border-[#F06449]"
             type="password"
             placeholder="Password"
+            name="password"
+            onChange={(e)=>onValueChange(e)}
           />
         </div>
         {/* Login Button */}
-        <button className="mt-10 bg-[#F06449] w-32 h-12 rounded-xl text-white font-semibold text-lg hover:bg-[#d85640] transition-all duration-200">
+        <button className="mt-10 bg-[#F06449] w-32 h-12 rounded-xl text-white font-semibold text-lg hover:bg-[#d85640] transition-all duration-200" onClick={()=>userSignup()}>
           Signup
         </button>
         <div className="text-[#36382E] font-bold text-xl mt-20">

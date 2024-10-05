@@ -1,7 +1,43 @@
-import React from "react";
-import Input from "./Input";
+import React, { useState } from "react";
+import { setUser } from "../features/hackji/hackjiSlice";
+import { useDispatch } from "react-redux";
+import { API } from "../service/api";
+import { useNavigate } from "react-router-dom";
 
-export default function Login() {
+export default function Login(props) {
+
+  const [error,setError]=useState("")
+
+  const dispatch=useDispatch();
+  const navigate=useNavigate();
+
+  const loginInitialValues={
+    email:"",
+    password:""
+  }
+
+  const [login,setLogin]=useState(loginInitialValues);
+
+  const onValueChange=(e)=>{
+    setLogin({...login,[e.target.name]:e.target.value})
+  }
+
+  const userLogin=async()=>{
+    let res=await API.userLogin(login);
+        if(res.isSuccess){
+            setError("");
+            setLogin(loginInitialValues);
+
+            dispatch(setUser(res.data));
+
+            props.isUserAuthenticated(true);
+
+            navigate("/");
+        }else{
+            setError("Unable to login")
+        }
+  }
+
   return (
     <div className="bg-gray-300 min-h-screen flex">
       <div className="bg-[#F06449] w-1/3 min-h-screen rounded-r-2xl flex items-center justify-center">
@@ -28,15 +64,20 @@ export default function Login() {
             className="h-12 w-full px-4 rounded-md border border-gray-400 focus:outline-none focus:border-[#F06449]"
             type="text"
             placeholder="Username"
+            name="email"
+            onChange={(e)=>onValueChange(e)}
           />
           <input
             className="h-12 w-full px-4 rounded-md border border-gray-400 focus:outline-none focus:border-[#F06449]"
             type="password"
             placeholder="Password"
+            name="password"
+            onChange={(e)=>onValueChange(e)}
           />
         </div>
+        {error && <p>{error}</p>}
         {/* Login Button */}
-        <button className="mt-10 bg-[#F06449] w-32 h-12 rounded-xl text-white font-semibold text-lg hover:bg-[#d85640] transition-all duration-200">
+        <button className="mt-10 bg-[#F06449] w-32 h-12 rounded-xl text-white font-semibold text-lg hover:bg-[#d85640] transition-all duration-200" onClick={()=>userLogin()}>
           Login
         </button>
         <div className="text-[#36382E] font-bold text-xl mt-20">
