@@ -20,7 +20,7 @@ export default function Login() {
           {"{ WELCOME BACK TO}"}
         </div>
         <div className="text-[#F06449] font-bold text-5xl -mr-36 mt-10">
-          {"<Hack.js/>"}
+          {"<Hack"} <span className="text-[#720026]">{".ji/>"}</span>
         </div>
         {/* Login Form */}
         <div className="mt-16 w-full max-w-sm flex flex-col items-center gap-y-6">
