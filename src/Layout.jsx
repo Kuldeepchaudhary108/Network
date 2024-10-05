@@ -1,12 +1,13 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
+import { Navigate, Outlet } from 'react-router-dom'
 
-function Layout() {
-  return (
+function Layout(props) {
+  return props.isAuthenticated?
     <>
         <Outlet/>
     </>
-  )
+    :
+    <Navigate replace to="/login"/>
 }
 
 export default Layout
