@@ -31,7 +31,6 @@ function App() {
           <Route path="" element={<Home />} />
           <Route path="/event" element={<Event />} />
           <Route path="/room" element={<EventDetails />} />
-         
         </Route>
       </>
     )
