@@ -26,7 +26,6 @@ export default function Home() {
   ];
   const navigate = useNavigate();
   const handleJoinClick = () => {
-    console.log("ya tak toh pauch raha hain ");
     navigate("/event");
   };
 
@@ -64,7 +63,7 @@ export default function Home() {
               width={15}
             />
           </h1>
-        </div>
+        </div>  
 
         <div>
           <div className="flex  flex-wrap justify-between items-center   mx-auto max-w-[1200px] gap-1   ">
