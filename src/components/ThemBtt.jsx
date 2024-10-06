@@ -36,7 +36,7 @@ export default function ThemBtt() {
   return (
     <div className="relative">
       <button
-        className="bg-gray-700 text-white px-4 py-2 rounded-lg flex items-center"
+        className="bg-gray-300 text-white px-4 py-2 rounded-lg flex items-center hover:bg-gray-500"
         onClick={toggleOptions}
       >
         {themeMode === "light" ? (
