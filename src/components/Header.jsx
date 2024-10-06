@@ -59,12 +59,16 @@ export default function Header() {
         </NavLink>
       </div>
       <div className="flex space-x-2 -mr-72 font-semibold">
-        <button className="hover:bg-gray-200 transition-all duration-200 rounded-xl min-w-20 h-10 ">
-          Login
-        </button>
-        <button className="bg-[#F06449] rounded-xl min-w-20 h-10 hover:bg-[#d85640] transition-all duration-200">
-          Signup
-        </button>
+        <NavLink to={"/login"}>
+          <button className="hover:bg-gray-200 transition-all duration-200 rounded-xl min-w-20 h-10 ">
+            Login
+          </button>
+        </NavLink>
+        <NavLink to={"/signup"}>
+          <button className="bg-[#F06449] rounded-xl min-w-20 h-10 hover:bg-[#d85640] transition-all duration-200">
+            Signup
+          </button>
+        </NavLink>
       </div>
       <div className=" flex float-end mt-20">
         <ThemBtt />

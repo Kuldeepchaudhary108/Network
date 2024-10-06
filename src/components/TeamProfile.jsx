@@ -89,7 +89,7 @@ export default function TeamProfile({ teamName, teamImage }) {
           {Members.map((member) => (
             <li
               key={member.LinkedIn}
-              className="bg-gray-800 text-white rounded-lg p-4"
+              className="bg-gray-800  text-white rounded-lg p-4"
             >
               <div
                 className="flex justify-between cursor-pointer items-center"
@@ -103,6 +103,7 @@ export default function TeamProfile({ teamName, teamImage }) {
                     alt={teamName}
                   />
                 </div>
+
                 <span
                   className={`material-icons transition-transform duration-300 ${
                     activeMember === member.LinkedIn ? "rotate-180" : ""
@@ -138,6 +139,14 @@ export default function TeamProfile({ teamName, teamImage }) {
                       {member.LinkedIn}
                     </a>
                   </p>
+                  <p className="flex cursor-pointer">
+                    Chat with :
+                    <img
+                      className="w-10 ml-3"
+                      src="./elements/cht.svg"
+                      alt=""
+                    />
+                  </p>
                 </div>
               )}
             </li>
@@ -145,8 +154,12 @@ export default function TeamProfile({ teamName, teamImage }) {
         </ul>
         <div className="mt-10">
           {" "}
-          <h1 className="text-2xl font-semibold">Project</h1>About the
-          project....
+          <h1 className="text-2xl font-semibold">Project</h1>
+          <h2 className="m-3 text-lg">
+            Leader Name :{}
+            <h2 className="m-5 text-lg">Github Repo:{""}</h2>
+          </h2>
+          About the project....
         </div>
       </div>
     </div>
